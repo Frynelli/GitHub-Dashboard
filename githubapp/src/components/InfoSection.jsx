@@ -1,3 +1,4 @@
+import Followers from "./Followers";
 import Repositories from "./Repositories";
 
 
@@ -5,7 +6,8 @@ const InfoSection =()=>{
 
     return<>
    
-    <Repositories/>
+    {/* <Repositories/> */}
+    <Followers/>
     
     </>
 }

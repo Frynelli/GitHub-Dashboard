@@ -15,6 +15,9 @@ a {
 h2 {
   font-size: 3rem; }
 
+h3 {
+  font-size: 2rem; }
+
 .bold {
   font-weight: 700; }
 
@@ -110,6 +113,9 @@ h2 {
     width: 100%;
     justify-content: space-between;
     margin-bottom: 6rem; }
+    .lists li img {
+      max-width: 10rem;
+      height: auto; }
     .lists li span h2 {
       text-align: start;
       padding-bottom: 2rem; }
@@ -124,3 +130,10 @@ h2 {
       .lists li .star .arrows {
         display: flex;
         padding: 0 1.5rem; }
+
+.followers-list .list-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .followers-list .list-2 div {
+    padding-left: 7em; }
