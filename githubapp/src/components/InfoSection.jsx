@@ -1,9 +1,12 @@
+import Repositories from "./Repositories";
 
 
 const InfoSection =()=>{
 
     return<>
-    <h2>this where the info is going to be</h2>
+   
+    <Repositories/>
+    
     </>
 }
 

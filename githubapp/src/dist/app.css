@@ -12,6 +12,9 @@ a {
   text-decoration: none;
   color: black; }
 
+h2 {
+  font-size: 3rem; }
+
 .bold {
   font-weight: 700; }
 
@@ -25,13 +28,16 @@ a {
   width: 100%;
   text-align: center;
   height: 100%;
-  padding-top: 3rem; }
+  padding-top: 3rem;
+  display: flex;
+  align-items: center; }
 
 .box-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%; }
+  width: 80%;
+  margin: 1rem; }
   .box-left .top {
     display: flex;
     align-items: flex-end;
@@ -45,8 +51,7 @@ a {
     text-align: left;
     width: 25rem; }
     .box-left .bottom h2 {
-      padding: 10px;
-      font-size: 3rem; }
+      padding: 10px; }
     .box-left .bottom h4, .box-left .bottom p {
       padding: 10px;
       font-size: 1.5rem;
@@ -94,3 +99,28 @@ a {
     .bottom-nav .navbar li:hover a {
       text-decoration: underline;
       text-decoration-color: #f45e28; }
+
+.lists {
+  list-style-type: none;
+  width: 100%; }
+  .lists li {
+    border-bottom: 2px solid black;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 6rem; }
+    .lists li span h2 {
+      text-align: start;
+      padding-bottom: 2rem; }
+    .lists li .star {
+      display: flex;
+      font-size: 2rem;
+      background-color: #a6adba;
+      border-radius: 10px;
+      padding: 10px;
+      align-items: center;
+      color: #ffff; }
+      .lists li .star .arrows {
+        display: flex;
+        padding: 0 1.5rem; }
