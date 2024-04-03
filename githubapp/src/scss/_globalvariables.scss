@@ -1,5 +1,22 @@
+//global colors, fonts
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+img{
+    display: block;
+   height: 500px;
+   width: 500px;
+   
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+//global classes
+.bold{
+font-weight: 700;
 }
