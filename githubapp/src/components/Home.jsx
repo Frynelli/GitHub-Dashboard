@@ -1,35 +1,52 @@
-import Layout from "./LayoutPage";
+
 import { Routes, Route, Link } from 'react-router-dom';
 import React from 'react';
 import Navbar from "./NavbarPage";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import OverviewPage from "./OverviewPage";
+import LayoutPage from "./LayoutPage";
 
 const Home =()=>{
-    const [items, setItems] = useState([])
-    const [user] = useState("Fabien")
   
+    const [userItems, setUserItems] = useState([]);
+    // const [user] = useState("Matthew");
+    const [user, setUser] = useState("Frynelli");
+
+    function handleSearch(results){
+        setUser(results);
+        
+    };
+    
     useEffect(() => {
-      const fetchRepos = async () => {
+      const fetchUser = async ()=>{
         const res = await fetch(
-          `https://api.github.com/users/${user}`
+            `https://api.github.com/users/${user}`
         )
         const data = await res.json()
-        setItems(data)
-        console.log(data)
+            setUserItems(data)
+            //console.log(data, "user");
       }
-  
-      fetchRepos()
+      fetchUser()
+      
     }, [user])
+    
+    
     return <>
-    <Navbar username={items.login} followers={items.followers} />
+    <Navbar onSearch={handleSearch} username={userItems.login} followers={userItems.followers} />
     <Routes>
-                <Route path="/" element={!items ? <Loading /> : <OverviewPage />} />
+                <Route path="/" element={!userItems ? <Loading /> : <OverviewPage items={userItems} />} />
                 <Route
                     path="/repositories"
-                    element={!items ? <Loading /> : <Layout items={items} />}
+                    element={!userItems ? <Loading /> : (<div>
+                        
+                    <LayoutPage 
+                    userItems={userItems} 
+                    />
+                       
+                    </div>)}
                 />
+               
             </Routes>
     
     

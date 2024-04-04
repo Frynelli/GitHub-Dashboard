@@ -31,7 +31,8 @@ p {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .box-right {
   width: 100%;
@@ -39,7 +40,15 @@ p {
   height: 100%;
   padding-top: 3rem;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll; }
+
+.box-right.overview-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 10rem; }
 
 .box-left {
   display: flex;
@@ -88,7 +97,8 @@ p {
       padding-right: 10px; }
   .top-nav .search {
     font-size: 2rem;
-    display: flex; }
+    display: flex;
+    padding-right: 2rem; }
     .top-nav .search input {
       width: 280px; }
 
@@ -129,8 +139,13 @@ p {
       max-width: 5rem;
       height: auto; }
     .lists li span h3 {
+      text-transform: capitalize;
       text-align: start;
       padding-bottom: 0.8rem; }
+    .lists li span .description {
+      font-size: 0.8rem;
+      color: grey;
+      width: 20rem; }
     .lists li .star {
       display: flex;
       background-color: #a6adba;
@@ -146,6 +161,13 @@ p {
         flex-direction: column;
         padding-left: 5px; }
 
+.language {
+  background-color: #8a8a8a;
+  width: fit-content;
+  color: #ffff;
+  font-weight: 700;
+  padding: 0 0.7em; }
+
 .followers-list .list-2 {
   display: flex;
   justify-content: flex-start;
@@ -160,4 +182,5 @@ p {
   padding-left: 3em;
   border-radius: 20px;
   text-align: left;
-  padding-top: 1.8em; }
+  padding-top: 1.8em;
+  line-height: 2; }

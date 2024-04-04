@@ -1,16 +1,13 @@
 import mike from "../assets/mike.jpg";
-import Card from "./Card";
+import React from "react";
 
-const UserPage = ()=>{
-
+const UserPage = (props)=>{
+console.log(props.image)
 
     return<>
     <div className="overview-container">
-    <img src={mike} alt="" />
+    <img src={props.image} alt="user avatar" />
     </div>
-    {/* <div className="box-right">
-        <Card/>
-    </div> */}
     </>
 }
 export default UserPage;

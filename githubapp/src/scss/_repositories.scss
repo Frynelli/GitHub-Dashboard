@@ -18,8 +18,16 @@
         }
         span{
             h3{
+                text-transform: capitalize;
                 text-align: start;
                 padding-bottom: 0.8rem;
+            }
+            .description{
+                
+                    font-size: 0.8rem;
+                    color: grey;
+                    width: 20rem;
+               
             }
         }
         .star{
@@ -41,4 +49,12 @@
         }
     }
 
+}
+//this is the styling for the language
+.language{
+    background-color: #8a8a8a;
+    width: fit-content;
+    color: #ffff;
+    font-weight: 700;
+    padding: 0 0.7em;
 }
