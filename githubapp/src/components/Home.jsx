@@ -10,9 +10,9 @@ import LayoutPage from "./LayoutPage";
 const Home =()=>{
   
     const [userItems, setUserItems] = useState([]);
-    // const [user] = useState("Matthew");
-    const [user, setUser] = useState("Frynelli");
-
+   
+    const [user, setUser] = useState("Frynelli");// sets the user after search
+    
     function handleSearch(results){
         setUser(results);
         
@@ -25,7 +25,7 @@ const Home =()=>{
         )
         const data = await res.json()
             setUserItems(data)
-            //console.log(data, "user");
+            console.log(data, "user");
       }
       fetchUser()
       
@@ -33,7 +33,12 @@ const Home =()=>{
     
     
     return <>
-    <Navbar onSearch={handleSearch} username={userItems.login} followers={userItems.followers} />
+    <Navbar 
+    onSearch={handleSearch} 
+    username={userItems.login} 
+    followers={userItems.followers} 
+    repos={userItems.public_repos} 
+    />
     <Routes>
                 <Route path="/" element={!userItems ? <Loading /> : <OverviewPage items={userItems} />} />
                 <Route
@@ -41,6 +46,7 @@ const Home =()=>{
                     element={!userItems ? <Loading /> : (<div>
                         
                     <LayoutPage 
+                    
                     userItems={userItems} 
                     />
                        

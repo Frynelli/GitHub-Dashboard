@@ -10,8 +10,14 @@ const Search = ({onSearch}) => {
             return;
         }
         onSearch(searchText);
+        setSearchText("");
        console.log("searched", searchText);
         
+    };
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            searchHandler();
+        }
     };
     
 
@@ -22,11 +28,12 @@ const Search = ({onSearch}) => {
                 type="text"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
+                onKeyDown={handleKeyDown}
                 name="search"
                 id="search"
             />
             <span>
-                <button onClick={searchHandler}><CiSearch /></button>
+                <button className="search-btn" onClick={searchHandler}><CiSearch /></button>
             </span>
         </>
     );

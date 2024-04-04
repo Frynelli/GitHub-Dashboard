@@ -20,6 +20,7 @@ console.log(repoItems)
                 );
                 const data = await res.json();
                 setRepoItems(data);
+                console.log(data)
                
             }
         };

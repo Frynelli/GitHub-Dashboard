@@ -1,13 +1,22 @@
 //card layout for overview page
 
 .card{
-    height: 20rem;
-    width: 30rem;
+    height: 50%;
+    width: 40rem;
     background-color: #edf0f0;
     padding-left: 3em;
     border-radius: 20px;
     text-align: left;
     padding-top: 1.8em;
     line-height: 2;
+    span{
+        p{
+            display: flex;
+            align-items: center;
+        }
+        p .bold{
+            padding: 0 5px;
+        }
+    }
     
 }

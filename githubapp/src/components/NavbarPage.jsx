@@ -29,7 +29,7 @@ const NavbarPage =(props)=>{
     <nav className="bottom-nav">
         <ul className="navbar">
             <li><Link to="/"> <IoMdBook/>Overview</Link></li>
-            <li><Link to='/repositories'><MdOutlineBook/> Repositories <span className="bold"></span></Link></li>
+            <li><Link to='/repositories'><MdOutlineBook/> Repositories <span className="bold p-side">{props.repos}</span></Link></li>
         </ul>
     </nav>
     </div>
