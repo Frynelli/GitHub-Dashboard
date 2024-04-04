@@ -9,7 +9,7 @@ const Repositories=()=>{
     <ul className="lists">
         <li>
             <span>
-                <h2>Project1</h2>
+                <h3>Project1</h3>
             <p>Description of the project here</p>
             </span>
             <div className="star">
@@ -24,8 +24,8 @@ const Repositories=()=>{
         </li>
         <li>
             <span>
-                <h2>Project2
-                </h2>
+                <h3>Project2
+                </h3>
             <p>Description of the project here</p>
             </span>
             <div className="star">
@@ -40,7 +40,7 @@ const Repositories=()=>{
         </li>
         <li>
             <span>
-                <h2>Project3</h2>
+                <h3>Project3</h3>
             <p>Description of the project here</p>
             </span>
             <div className="star">
@@ -55,7 +55,7 @@ const Repositories=()=>{
         </li>
         <li>
             <span>
-                <h2>Project4</h2>
+                <h3>Project4</h3>
             <p>Description of the project here</p>
             </span>
             <div className="star">
