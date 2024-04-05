@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { HiOutlineUsers } from "react-icons/hi2";
 
 
 const User =(props)=>{
-    //console.log("UserPage", props.name)
     return<>
      <div className="top">
     <img src={props.image} alt="" />

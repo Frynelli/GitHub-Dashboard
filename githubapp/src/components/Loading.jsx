@@ -2,7 +2,7 @@
 
 const Loading=()=>{
     return<>
-    <div className="bold">Loading...</div>
+    <div className="bold center">Loading...</div>
     </>
 }
 export default Loading;

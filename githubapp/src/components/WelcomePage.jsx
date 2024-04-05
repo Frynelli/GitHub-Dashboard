@@ -1,5 +1,5 @@
 import Search from "./Search";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 const WelcomePage = (props)=>{

@@ -1,3 +1,4 @@
+//Repositories 
 
 import React from "react";
 import { FaRegStar } from "react-icons/fa";
@@ -5,7 +6,7 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 
 const Repositories = ({ info, index, totalItems, moveItemCallback }) => {
-  // Destructuring info object to get individual repository properties
+  
   const { name, description, language, stargazers_count } = info;
 
   // Move up and down function
@@ -37,7 +38,6 @@ const Repositories = ({ info, index, totalItems, moveItemCallback }) => {
           </span>
         </div>
         <span className="arrows">
-            {/* Pass the direction to the moveItem function */}
             <button onClick={() => moveItem(-1)} disabled={index === 0}>
               <IoIosArrowUp />
             </button>

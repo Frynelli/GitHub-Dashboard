@@ -1,15 +1,12 @@
 //This is the Layout Page
 //It's the main layout for the followers and the repositories page, 
 //Here we are changing the component to repositories or followers based on the url.
-//but keeping the user main info that I want to have on every outcome
 
-//Things to solve.. How to pass the information to followers component
-//since the info we need are coming from the main user and 
+
 
 import React, { useEffect, useState } from "react";
 import Repositories from "./Repositories";
 import User from "./User";
-import { useParams } from "react-router-dom";
 import Followers from "./Followers";
 
 const LayoutPage = (props) => {
@@ -63,7 +60,7 @@ useEffect(() => {
 
     fetchFollowers();
     fetchRepos();
-}, [user]);
+}, [user, dataUser]);
 
    //moving btn logic inside the repository
     const moveItemCallback = (currentIndex, newIndex) => {
@@ -81,7 +78,9 @@ useEffect(() => {
         sectionComponent = <span className="w-100">
         {followersInfo.map((data) => (
                     
-                    <Followers key={data.id} info={data} />
+                    <Followers 
+                    key={data.id} 
+                    info={data} />
                 ))}
     </span>
     } else if(props.section === "repositories") {

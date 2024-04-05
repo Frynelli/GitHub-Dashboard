@@ -2,7 +2,7 @@
 //Here I am fetching data from the API about the user so I can ectract the
 //inforamtion about the user we can search in the search component 
 
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import React from 'react';
 import Navbar from "./NavbarPage";
 import { useEffect, useState } from "react";
@@ -13,8 +13,6 @@ import WelcomePage from './WelcomePage';
 
 
 const Home =()=>{
-    
-    const location = useLocation();
     const[error,setError]=useState(null);
     const [userItems, setUserItems] = useState([]);
     const [user, setUser] = useState("");// sets the user after search
@@ -26,17 +24,6 @@ const Home =()=>{
     function handleSearch(results){
         setUser(results);
     };
-
-
-    // Navigate to the root URL upon refresh
-    // useEffect(() => {
-
-    //     if (location.pathname !== '/') {
-
-    //         navigate('/');
-    //     }
-    // }, [location,navigate]);
-
 
     //Here  I make a request to the Github API for the user data
     useEffect(() => {
@@ -87,6 +74,7 @@ const Home =()=>{
     repos={userItems.public_repos} 
     />
     <Routes>
+                
                 <Route path="/" element={<WelcomePage onSearch={handleSearch}/>}/>
                 <Route path="/overview" element={!userItems ? <Loading /> : <OverviewPage items={userItems} />} />
 

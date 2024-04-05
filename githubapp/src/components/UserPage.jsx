@@ -1,4 +1,4 @@
-import mike from "../assets/mike.jpg";
+//i use it in the overview page
 import React from "react";
 
 const UserPage = (props)=>{
