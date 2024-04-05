@@ -4,9 +4,12 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        img{
+            border-radius: 50%;
+        }
         div{
             
-            padding-left: 7em;
+            padding-left: 14em;
         }
     }
 }

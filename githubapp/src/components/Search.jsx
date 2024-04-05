@@ -3,6 +3,7 @@ import { CiSearch } from "react-icons/ci";
 
 const Search = ({onSearch}) => {
     const [searchText, setSearchText] = useState("");
+//here I am handling the search information so I can pass it on 
 
     const searchHandler = () => {
         if (searchText.trim() === "") {

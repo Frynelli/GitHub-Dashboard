@@ -1,5 +1,6 @@
 import { HiOutlineUsers } from "react-icons/hi2";
 import React from "react";
+import { Link } from "react-router-dom";
 const Card =(props)=>{
     
     return<>
@@ -10,7 +11,8 @@ const Card =(props)=>{
     <h4>{props.location}</h4>
     <p> 
         <HiOutlineUsers/>  <span className="bold">{props.followers}</span>
-        <a href="#Followers">Followers</a> </p> 
+        <Link to={`/followers`} >Followers</Link> 
+        </p> 
         </span>
     
     </div>

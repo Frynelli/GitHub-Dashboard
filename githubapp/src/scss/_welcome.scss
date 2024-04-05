@@ -1,0 +1,34 @@
+//welcome container
+
+.welcome-page{
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16rem;
+    div{
+        width: fit-content;
+        h1{
+        font-size: 1.5rem;
+        
+        background-color: #ffbc91;
+        border: 2px solid grey;
+        height: fit-content;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        }
+        span{
+            display: grid;
+            grid-template-columns: 94% 6%;
+            width: 100%;
+            .search-input{
+                padding: 10px 0;
+            }
+        }
+
+        
+    }
+}
