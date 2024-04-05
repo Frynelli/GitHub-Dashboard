@@ -2,7 +2,6 @@
 
 import React from "react";
 import { FaRegStar } from "react-icons/fa";
-import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 
 const Repositories = ({ info  }) => {
