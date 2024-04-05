@@ -2,7 +2,7 @@
 import React from "react";
 
 const UserPage = (props)=>{
-console.log(props.image)
+
 
     return<>
     <div className="overview-container">

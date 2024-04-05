@@ -5,20 +5,13 @@ import { FaRegStar } from "react-icons/fa";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 
-const Repositories = ({ info, index, totalItems, moveItemCallback }) => {
+const Repositories = ({ info  }) => {
   
   const { name, description, language, stargazers_count } = info;
-
-  // Move up and down function
-  const moveItem = (direction) => {
-    const newIndex = index + direction;
-    if (newIndex >= 0 && newIndex < totalItems) {
-      // Call the moveItemCallback function passed from the layoutPage
-      moveItemCallback(index, newIndex);
-    }
-  };
+ 
 
   return (
+    <>
     <ul className="lists">
       <li>
         <span>
@@ -37,21 +30,12 @@ const Repositories = ({ info, index, totalItems, moveItemCallback }) => {
             <FaRegStar />
           </span>
         </div>
-        <span className="arrows">
-            <button onClick={() => moveItem(-1)} disabled={index === 0}>
-              <IoIosArrowUp />
-            </button>
-            <button
-              onClick={() => moveItem(1)}
-              disabled={index === totalItems - 1}
-            >
-              <IoIosArrowDown />
-            </button>
-          </span>
           </div>
       </li>
     </ul>
+    </>
   );
+ 
 };
 
 export default Repositories;

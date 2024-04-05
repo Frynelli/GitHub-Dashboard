@@ -46,18 +46,7 @@
                 align-items: center;
                 justify-content: space-evenly;
             }
-            .arrows{
-                display: flex;
-                flex-direction: column;
-                padding-left: 5px ;
-                button{
-                    height: 30px;
-                    border-radius: 50%;
-                    width: 30px;
-                    border: none;
-                    margin-bottom: 2px;
-                }
-            }
+            
         }
         
     }
@@ -74,3 +63,23 @@
         color:coral;
     }
 }
+.arrows{
+    display: flex;
+    padding-left: 5px ;
+    justify-content: end;
+    padding-right: 2rem;
+   
+    button{
+        height: 30px;
+        border-radius: 5px;
+        width: 30px;
+        border: none;
+        margin-bottom: 2px;
+        margin-right: 5px;
+    }
+}
+// .shorting{
+//     justify-content: end;
+//     padding-right: 2rem;
+//     flex-direction: row;
+// }

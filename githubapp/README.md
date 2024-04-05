@@ -53,5 +53,4 @@
 
 ### Difficulties
 
-- Moving repo lists when pressing the buttons.
 - I can't find a solution to the 403 forbitten error the github api is giving me 

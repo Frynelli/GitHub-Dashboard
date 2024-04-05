@@ -8,6 +8,26 @@ import React, { useEffect, useState } from "react";
 import Repositories from "./Repositories";
 import User from "./User";
 import Followers from "./Followers";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+
+//shorting repositories according to stars starts here
+
+const sortRepositoriesByStars = (repositories, order) => {
+    const sortedRepositories = [...repositories];
+    
+    sortedRepositories.sort((a, b) => {
+      if (order === 'asc') {
+        return a.stargazers_count - b.stargazers_count;
+      } else {
+        return b.stargazers_count - a.stargazers_count;
+      }
+    });
+    
+    return sortedRepositories;
+  };
+
+  
+
 
 const LayoutPage = (props) => {
     const [followersInfo, setFollowersInfo]=useState([]);//Here we store the follower info
@@ -62,13 +82,10 @@ useEffect(() => {
     fetchRepos();
 }, [user, dataUser]);
 
-   //moving btn logic inside the repository
-    const moveItemCallback = (currentIndex, newIndex) => {
-        const newItems = [...repoItems]; 
-        const temp = newItems[currentIndex];
-        newItems[currentIndex] = newItems[newIndex];
-        newItems[newIndex] = temp;
-        setRepoItems(newItems); 
+  //START HERE repository stars 
+  const handleSortRepositories = (order) => {
+    const sortedItems = sortRepositoriesByStars(repoItems, order);
+    setRepoItems(sortedItems);
   };
     const { login, name, followers, avatar_url, location } = dataUser  || {};
 
@@ -86,6 +103,14 @@ useEffect(() => {
     } else if(props.section === "repositories") {
         sectionComponent = (
         <span className="w-100">
+             <span className="arrows shorting">
+    <button onClick={() => handleSortRepositories("asc")} > 
+        <IoIosArrowUp />
+        </button>
+    <button onClick={() => handleSortRepositories("desc")} >
+         <IoIosArrowDown />
+         </button>
+    </span>
                 {repoItems.map((repo,index) => (
                     
                     <Repositories 
@@ -93,7 +118,7 @@ useEffect(() => {
                     info={repo}
                     index={index}
                     totalItems={repoItems.length}
-                    moveItemCallback={moveItemCallback}
+                    sortRepositories={handleSortRepositories}
                      />
                 ))}
             </span>
