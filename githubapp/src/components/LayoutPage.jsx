@@ -48,7 +48,7 @@ useEffect(() => {
         if (dataUser) {
             try {
                 const res = await fetch(
-                    `https://api.github.com/users/${user}/repos?per_page=16&sort=updated`
+                    `https://api.github.com/users/${user}/repos?per_page=16&sort=updated&type=public`
                 );
                 if (!res.ok) {
                     throw new Error("Failed to fetch repositories");
