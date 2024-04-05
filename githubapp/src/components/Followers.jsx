@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Elephant from "../assets/elephant.png";
+
 
 const Followers =(props)=>{
 const [userItems, setUserItems] = useState([]);
@@ -17,7 +17,7 @@ useEffect( ()=>{
             //console.log(data, "user");
       }
       fetchUser()
-},[])
+},[username])
 
     return<>
     <ul className="lists followers-list">

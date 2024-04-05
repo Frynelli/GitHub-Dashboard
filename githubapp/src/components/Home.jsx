@@ -2,7 +2,7 @@
 //Here I am fetching data from the API about the user so I can ectract the
 //inforamtion about the user we can search in the search component 
 
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import React from 'react';
 import Navbar from "./NavbarPage";
 import { useEffect, useState } from "react";
@@ -11,26 +11,47 @@ import OverviewPage from "./OverviewPage";
 import LayoutPage from "./LayoutPage";
 import WelcomePage from './WelcomePage';
 
-const Home =()=>{
 
+const Home =()=>{
+    
+    const location = useLocation();
     const[error,setError]=useState(null);
     const [userItems, setUserItems] = useState([]);
     const [user, setUser] = useState("");// sets the user after search
     const navigate = useNavigate();
+    
 
       //Here I am passing through the result information from the search input
       //and I am storing it to the User 
     function handleSearch(results){
         setUser(results);
     };
-    console.log(user, "this is user from home")
-    
+
+
+    // Navigate to the root URL upon refresh
+    // useEffect(() => {
+
+    //     if (location.pathname !== '/') {
+
+    //         navigate('/');
+    //     }
+    // }, [location,navigate]);
+
+
     //Here  I make a request to the Github API for the user data
     useEffect(() => {
         const fetchUser = async () => {
+            let timeoutId;
           try {
+
             if (user.trim() !== '') {
+                timeoutId = setTimeout(() => {
+                    // Handle the timeout
+                    console.log('Request timed out');
+                    throw new Error('Request timed out');
+                }, 10000); // 10 seconds timeout
                 const res = await fetch(`https://api.github.com/users/${user}`);
+                clearTimeout(timeoutId);
                 if (!res.ok) {
                     if (res.status === 404) {
                         alert("The user does not exist.")

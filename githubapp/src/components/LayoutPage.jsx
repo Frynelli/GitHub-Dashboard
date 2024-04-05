@@ -17,8 +17,6 @@ const LayoutPage = (props) => {
     const [repoItems, setRepoItems] = useState([]); //the information for the repository
     const [dataUser, setDataUser] = useState("?."); //I am passing down the username from Home component 
     const user = dataUser.login; //I have to create another user before I request anything from the API
-    
- 
 
 //We pass the User info here from the Home component 
 
@@ -27,6 +25,7 @@ const LayoutPage = (props) => {
     }, [props.userItems]);
 
 //Here we fetch the data for the repositories and the followers
+//handling errors
 useEffect(() => {
     const fetchRepos = async () => {
         if (dataUser) {
@@ -65,8 +64,15 @@ useEffect(() => {
     fetchFollowers();
     fetchRepos();
 }, [user]);
-   
 
+   //moving btn logic inside the repository
+    const moveItemCallback = (currentIndex, newIndex) => {
+        const newItems = [...repoItems]; 
+        const temp = newItems[currentIndex];
+        newItems[currentIndex] = newItems[newIndex];
+        newItems[newIndex] = temp;
+        setRepoItems(newItems); 
+  };
     const { login, name, followers, avatar_url, location } = dataUser  || {};
 
     // Conditionally render different components based on the section parameter
@@ -81,9 +87,15 @@ useEffect(() => {
     } else if(props.section === "repositories") {
         sectionComponent = (
         <span className="w-100">
-                {repoItems.map((repo) => (
+                {repoItems.map((repo,index) => (
                     
-                    <Repositories key={repo.id} info={repo} />
+                    <Repositories 
+                    key={repo.id} 
+                    info={repo}
+                    index={index}
+                    totalItems={repoItems.length}
+                    moveItemCallback={moveItemCallback}
+                     />
                 ))}
             </span>
         );

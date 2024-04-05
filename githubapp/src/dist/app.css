@@ -161,28 +161,32 @@ p {
     .lists li span .description {
       font-size: 0.8rem;
       color: grey;
-      width: 20rem; }
-    .lists li .star {
+      width: 20rem;
+      text-align: left; }
+    .lists li .btn-repo {
       display: flex;
-      background-color: #a6adba;
-      border-radius: 10px;
-      color: #ffff;
-      height: 3em;
-      width: 6em;
-      margin-right: 3em;
       align-items: center;
       justify-content: space-evenly; }
-      .lists li .star .arrows {
-        display: flex;
-        flex-direction: column;
-        padding-left: 5px; }
+      .lists li .btn-repo .star {
+        background-color: #a6adba;
+        border-radius: 10px;
+        color: #ffff;
+        height: 3em;
+        width: 6em;
+        margin-right: 3em; }
+        .lists li .btn-repo .star .arrows {
+          display: flex;
+          flex-direction: column;
+          padding-left: 5px; }
 
 .language {
-  background-color: #8a8a8a;
+  display: flex;
+  align-items: center;
   width: fit-content;
-  color: #ffff;
   font-weight: 700;
   padding: 0 0.7em; }
+  .language svg {
+    color: coral; }
 
 .followers-list .list-2 {
   display: flex;
@@ -191,7 +195,8 @@ p {
   .followers-list .list-2 img {
     border-radius: 50%; }
   .followers-list .list-2 div {
-    padding-left: 14em; }
+    text-align: left;
+    padding-left: 3em; }
 
 .welcome-page {
   display: flex;
