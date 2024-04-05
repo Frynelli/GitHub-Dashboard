@@ -21,12 +21,9 @@ const NavbarPage =(props)=>{
     function handleSearch(searchText){    
         setSearchResults(searchText);
         props.onSearch(searchText);
-        //setShowSearch(true);
-        //console.log("its working")
-        
+    
     }
-    //console.log(searchResults,"search results next to show")
-    //console.log(showSearch,"This is show")
+    
     
    
 

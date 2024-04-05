@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const OverviewPage =(props)=>{
     const [dataUser, setDataUser]=useState([]);
-    //console.log(dataUser.followers)
     useEffect( ()=>{
         setDataUser(props.items);
         
