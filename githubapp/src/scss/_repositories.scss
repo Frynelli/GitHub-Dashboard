@@ -33,22 +33,29 @@
         .btn-repo{
             display: flex;
             align-items: center;
-                justify-content: space-evenly;
+            justify-content: space-evenly;
+            margin-right: 2rem;
             .star{
-                //display: flex;
+                display: flex;
                 background-color: #a6adba;
                 border-radius: 10px;
                 color: #ffff;
                 height: 3em;
                 width:6em;
-                margin-right: 3em;
-                //align-items: center;
-                //justify-content: space-evenly;
-                .arrows{
-                    display: flex;
-                    flex-direction: column;
-                    padding-left: 5px ;
-                    //padding: 0 5px;
+                margin-right: 1em;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .arrows{
+                display: flex;
+                flex-direction: column;
+                padding-left: 5px ;
+                button{
+                    height: 30px;
+                    border-radius: 50%;
+                    width: 30px;
+                    border: none;
+                    margin-bottom: 2px;
                 }
             }
         }

@@ -13,7 +13,7 @@ import Search from "./Search";
 
 const NavbarPage =(props)=>{
     // I want to start showing the search and the links after the initial search result
-    const [showSearch, setShowSearch] = useState(false);
+    //const [showSearch, setShowSearch] = useState(false);
     
     //this is to get the result information back to Home component
     const [searchResults, setSearchResults] = useState([]);
@@ -21,8 +21,8 @@ const NavbarPage =(props)=>{
     function handleSearch(searchText){    
         setSearchResults(searchText);
         props.onSearch(searchText);
-        setShowSearch(true);
-        console.log("its working")
+        //setShowSearch(true);
+        //console.log("its working")
         
     }
     //console.log(searchResults,"search results next to show")
@@ -33,11 +33,10 @@ const NavbarPage =(props)=>{
     return <div className="container-nav">
       <div className="top-nav">
     <p><span><FaGithub/></span>{props.username}</p>
-    {!showSearch && (
         <section className="search">
         <Search onSearch={handleSearch}/>
     </section>
-    )}
+    
     
     </div>
     <nav className="bottom-nav">
