@@ -6,7 +6,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import React from 'react';
 import Navbar from "./NavbarPage";
 import { useEffect, useState } from "react";
-import Loading from "./Loading";
 import OverviewPage from "./OverviewPage";
 import LayoutPage from "./LayoutPage";
 import WelcomePage from './WelcomePage';
@@ -18,7 +17,6 @@ const Home =()=>{
     const [user, setUser] = useState("");// sets the user after search
     const navigate = useNavigate();
     
-
       //Here I am passing through the result information from the search input
       //and I am storing it to the User 
     function handleSearch(results){
@@ -76,11 +74,11 @@ const Home =()=>{
     <Routes>
                 
                 <Route path="/" element={<WelcomePage onSearch={handleSearch}/>}/>
-                <Route path="/overview" element={!userItems ? <Loading /> : <OverviewPage items={userItems} />} />
+                <Route path="/overview" element={<OverviewPage items={userItems} />} />
 
                 <Route
                     path="/repositories"
-                    element={!userItems ? <Loading /> : (<div>
+                    element={(<div>
                         
                     <LayoutPage 
                     section= 'repositories'
@@ -92,7 +90,7 @@ const Home =()=>{
                 />
                 <Route
                     path="/followers"
-                    element={!userItems ? <Loading /> : (<div>
+                    element={(<div>
                         
                     <LayoutPage 
                     section="followers" 

@@ -1,4 +1,3 @@
-import UserPage from "./UserPage"; 
 import Card from "./Card";
 import { useEffect, useState } from "react";
 
@@ -19,9 +18,18 @@ const OverviewPage =(props)=>{
     return<>
     <div className="container">
     <div className="box-left">
-<UserPage image={avatar}/>
-</div>
-<div className="box-right overview-card"><Card name={name} username={userName} followers={followers} location={location}/></div>
+    
+    <div className="overview-container">
+    <img src={avatar} alt="user avatar" />
+    </div>
+        </div>
+    <div className="box-right overview-card">
+    <Card 
+    name={name} 
+    username={userName} 
+    followers={followers} 
+    location={location}/>
+    </div>
 
 </div> 
     
